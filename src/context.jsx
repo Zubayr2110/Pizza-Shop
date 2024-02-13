@@ -78,10 +78,12 @@ const AppProvider = ({ children }) => {
     setBasket([...basket, newBasketItem]);
   };
 
-  useEffect(() => {
-    localStorage.setItem("products", JSON.stringify(Data));
-  }, [Data]);
-
+  // useEffect(() => {
+  //   localStorage.setItem("products", JSON.stringify(Data));
+  // }, [Data]);
+  window.addEventListener("DOMContentLoaded", () =>
+    localStorage.setItem("products", JSON.stringify(Data))
+  );
   useEffect(() => {
     dispatch({ type: "TOTAL" });
   }, [state.cart]);
