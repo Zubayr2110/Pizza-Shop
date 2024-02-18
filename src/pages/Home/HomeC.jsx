@@ -10,6 +10,7 @@ import {
   SHomeItemImg,
 } from "../../components/Styled";
 import { useGlobalContext } from "../../context";
+import Data from "../../components/Data";
 
 export default function HomeC({
   id,
@@ -21,6 +22,9 @@ export default function HomeC({
 }) {
   const navigate = useNavigate();
   const { addBasket } = useGlobalContext();
+  const addBTF = () => {
+    Data.filter(item => item.id === id)
+  }
   return (
     <SHomeItem>
       <SHomeItemImg

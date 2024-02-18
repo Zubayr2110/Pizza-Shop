@@ -8,7 +8,14 @@ import ProtectRoute from "./ProtectRoute.jsx";
 export default function Router() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route
+        path="/"
+        element={
+          <ProtectRoute>
+            <Home />
+          </ProtectRoute>
+        }
+      />
       <Route path="/signin/user" element={<SignIn />} />
       <Route path="/single/:id" element={<Single />} />
       <Route

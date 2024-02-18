@@ -1,12 +1,22 @@
-import './App.css'
-import Router from './components/Router'
+import { useNavigate } from "react-router";
+import "./App.css";
+import Router from "./components/Router";
+import { getUser } from "./utils";
 
 function App() {
+  const navigate = useNavigate();
+  console.log(getUser());
+  const routsignin = () => {
+    if (!getUser()) {
+      navigate("/signin/user");
+    }
+  };
   return (
     <>
-      <Router/>
+      <Router />
+      {routsignin()}
     </>
-  )
+  );
 }
 
-export default App
+export default App;

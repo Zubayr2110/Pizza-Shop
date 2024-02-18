@@ -48,7 +48,7 @@ const AppProvider = ({ children }) => {
   const clearAll = () => {
     dispatch({ type: "CLEAR" });
     localStorage.removeItem("basket");
-    location.reload();
+    // location.reload();
   };
   const login = () => {
     const newUser = { id: id, name: name, psw: password };
@@ -75,6 +75,7 @@ const AppProvider = ({ children }) => {
       image: image,
       amount: amountp,
     };
+    JSON.parse(localStorage.getItem("basket")).filter((prod) => prod.id === id);
     setBasket([...basket, newBasketItem]);
   };
 

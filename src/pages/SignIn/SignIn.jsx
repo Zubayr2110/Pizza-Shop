@@ -73,8 +73,8 @@ export default function SignIn() {
             ></StyledSignInFormInp1>
           </StyledSignInFormInp2>
           <StyledSignInSBtn>
-            <StyledSignInBtn type="submit" onClick={() => navigate("/")}>
-              Sign In
+            <StyledSignInBtn type="Submit" onClick={() => login}>
+              SEND
             </StyledSignInBtn>
           </StyledSignInSBtn>
         </StyledSignInForm>
